@@ -18,7 +18,4 @@ class Board
   def correct_point?(x, y, size)
     x >= 0 && y >= 0 && x < size && y < size
   end
-
-  def reset
-  end
 end

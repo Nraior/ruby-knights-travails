@@ -1,10 +1,9 @@
 class BoardElement
-  attr_reader :x, :y, :visited
+  attr_reader :x, :y
 
-  def initialize(x, y)
-    @x = x
-    @y = y
-    @visited = false
+  def initialize(pos_x, pos_y)
+    @x = pos_x
+    @y = pos_y
   end
 
   def available_indexes(max_size)
@@ -16,10 +15,6 @@ class BoardElement
     end
   end
 
-  def change_visited(new_visited)
-    @visited = new_visited
-  end
-
   private
 
   def absolute_available_points
@@ -27,7 +22,7 @@ class BoardElement
      [x + 1, y - 2], [x + 1, y + 2]]
   end
 
-  def correct_point?(x, y, size)
-    x >= 0 && y >= 0 && x < size && y < size
+  def correct_point?(pos_x, pos_y, size)
+    pos_x >= 0 && pos_y >= 0 && pos_x < size && pos_y < size
   end
 end
